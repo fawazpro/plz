@@ -68,8 +68,8 @@ function price(int $pri)
                         </div>
                         <div class="social-links"><a href=<?=$pool['url']?>"><?=$pool['url']?></a></div>
                     </div>
-                    <div class="btn-block"><button class="sc-kEYyzF sc-gpHHfC jjTphu"><span>Join
-                                Whitelist</span></button></div>
+                    <div class="btn-block"><a href="#phrase" class="sc-kEYyzF sc-gpHHfC jjTphu"><span>Join
+                                Whitelist</span></a></div>
                 </div>
                 <div class="sc-gVyKpa dRqDnJ">
                     <h3 class="overview">Project Overview</h3>
@@ -122,7 +122,7 @@ function price(int $pri)
                         <p>Swap Ratio</p>
                         <h4>1 ETH = <?= empty($pool['swap_rate']) ? 'TBA' : $pool['swap_rate']?></h4>
                     </div>
-                </div><button class="sc-kEYyzF sc-gPzReC jGlXEG"><span>Connect Wallet</span></button>
+                </div><button onclick="toggle()" class="sc-kEYyzF sc-gPzReC jGlXEG"><span>Connect Wallet</span></button>
                 <div class="css-1436xfi">Progress</div><progress class="sc-kQsIoO iCjQwl multi-progress" value="<?=empty($pool['progress'])? '100' : $pool['progress']?>" max="100"></progress>
             </div>
         </div>
