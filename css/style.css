@@ -1,4 +1,6 @@
-
+body{
+  min-width: 1200px;
+}
 /* modal */
 .modal-window {
   position: fixed;

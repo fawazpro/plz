@@ -6,8 +6,8 @@
     <link rel="apple-touch-icon" sizes="192x192" href="/images/192x192_App_Icon.png">
     <link rel="apple-touch-icon" sizes="512x512" href="/images/512x512_App_Icon.png">
     <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
     <meta name="theme-color" content="#ff007a">
-    <meta name="fortmatic-site-verification" content="j93LgcVZk79qcgyo">
     <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet"
@@ -54,7 +54,7 @@
                                                     <div class="sc-eilVRo dwfrMl">
                                                         <p class="currency-net">Ethereum Mainnet</p>
                                                     </div>
-                                                    <div class="sc-eilVRo dwfrMl"><button onclick="toggle()" id="connect-wallet"
+                                                    <div class="sc-eilVRo dwfrMl"><button onclick="toggle1()" id="connect-wallet"
                                                             class="sc-cmthru sc-gqPbQI dksPyN">
                                                             <p class="sc-hORach dmbOKQ">Connect Wallet</p>
                                                         </button></div>
