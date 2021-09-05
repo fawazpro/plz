@@ -4,7 +4,7 @@
             <p class="flex-item one">Lock Your $POOLZ</p>
             <p class="flex-item two">To be eligible for upcoming IDOs on POOLZ, you need to buy Poolz
                 tokens and lock them</p>
-            <div class="flex-item three"><a href="#phrase"><button  class="sc-kEYyzF sc-dEoRIm gJQMTn"><span>Stake Now</span></button></a></div>
+            <div class="flex-item three"><a onclick="toggle1()"><button  class="sc-kEYyzF sc-dEoRIm gJQMTn"><span>Stake Now</span></button></a></div>
         </div>
     </div>
 </div>
