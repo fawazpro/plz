@@ -28,6 +28,32 @@ function valid($txt){
         return $txt;
     }
 }
+
+
+function timediff($when=0,$created)
+{
+    $compare = new DateInterval('P'.$when.'D');
+    $now = new DateTime($created);
+    $ndate = $now->add($compare);
+    $nw = new DateTime(date('c'));
+    $diff = $nw->diff($ndate, false);
+    if($diff->invert){
+        return [
+        'day' => 0,
+        'hours' => 0,
+        'mins' => 0,
+        'secs' => 0,
+    ] ;
+    }else{
+        return [
+            'day' => $diff->format('%d'),
+            'hours' => $diff->format('%h'),
+            'mins' => $diff->format('%i'),
+            'secs' => $diff->format('%s'),
+        ] ;
+    }
+    
+}
 ?>
 <div class="sc-iqzUVk cnKuKH">
     <div class="sc-jzgbtB sc-TFwJa hcZfvv"></div>
@@ -74,7 +100,7 @@ function valid($txt){
                                                             <p class="sc-RcBXQ bnxkKh"><?=$pool['name']?></p>
                                                         </div>
                                                         <div class="sc-gmeYpB bvgmHo">
-                                                            <div class="sc-iSDuPN dudPXR"><span color="#D66464" class="sc-LKuAh koOFuX"></span><span class="time-text">in <?=rand(1,19)?> days</span>
+                                                            <div class="sc-iSDuPN dudPXR"><span color="#D66464" class="sc-LKuAh koOFuX"></span><span class="time-text">in <?=timediff((empty($pool['when'])?0:$pool['when']),$pool['created_on'])['day']?> days</span>
                                                                 <div class="sc-hzNEM jPtNYJ">
                                                                     <?=wallet($pool['wallet'])?>
                                                                 </div>

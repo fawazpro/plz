@@ -8,6 +8,30 @@ function valid($txt)
     }
 }
 
+function timediff($when,$created)
+{
+    $compare = new DateInterval('P'.$when.'D');
+    $now = new DateTime($created);
+    $ndate = $now->add($compare);
+    $nw = new DateTime(date('c'));
+    $diff = $nw->diff($ndate, false);
+    if($diff->invert){
+        return [
+        'day' => 0,
+        'hours' => 0,
+        'mins' => 0,
+        'secs' => 0,
+    ] ;
+    }else{
+        return [
+            'day' => $diff->format('%d'),
+            'hours' => $diff->format('%h'),
+            'mins' => $diff->format('%i'),
+            'secs' => $diff->format('%s'),
+        ] ;
+    }
+    
+}
 
 function price(int $pri)
 {
@@ -179,10 +203,11 @@ function price(int $pri)
                         timer.start({
                             countdown: true,
                             startValues: {
-                                days: 3,
-                                hours: 5,
-                                minutes: 1,
-                                seconds: 5
+                                <?php $diff = timediff((empty($pool['when'])?0:$pool['when']),$pool['created_on'])?>
+                                days: <?=$diff['day']?>,
+                                hours: <?=$diff['hours']?>,
+                                minutes: <?=$diff['mins']?>,
+                                seconds: <?=$diff['secs']?>
                             }
                         });
 
