@@ -114,6 +114,14 @@ function price(int $pri)
                                 <hr>
                                 <div class="css-vurnku">Token Distribution<span><?= valid($pool['token_distrib']) ?></span></div>
                             </div>
+                            <div>
+                                <hr>
+                                <div class="css-vurnku">Token Price<span><?= empty($pool['token_price']) ? 'N/A' : '$' . $pool['token_price'] ?></span></div>
+                            </div>
+                            <div>
+                                <hr>
+                                <div class="css-vurnku">TGE Market Cap<span><?= valid($pool['tge_market_cap']) ?></span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="information">
@@ -122,10 +130,6 @@ function price(int $pri)
                             <div>
                                 <hr>
                                 <div class="css-vurnku">Symbols<span><?= valid($pool['symbol']) ?></span></div>
-                            </div>
-                            <div>
-                                <hr>
-                                <div class="css-vurnku">Token Price<span><?= empty($pool['token_price']) ? 'N/A' : '$' . $pool['token_price'] ?></span></div>
                             </div>
                             <div>
                                 <hr>
@@ -230,7 +234,7 @@ function price(int $pri)
                 <div class="sc-cpmKsF iZxBap">
                     <div>
                         <p>Swap Ratio</p>
-                        <h4>1 ETH = <?= empty($pool['swap_rate']) ? 'TBA' : $pool['swap_rate'] ?></h4>
+                        <h4>1 <?= empty($pool['swap_name'])?'ETH':$pool['swap_name']?> = <?= empty($pool['swap_rate']) ? 'TBA' : $pool['swap_rate'] ?></h4>
                     </div>
                 </div><button onclick="toggle1()" class="sc-kEYyzF sc-gPzReC jGlXEG"><span>Connect Wallet</span></button>
                 <div class="css-1436xfi">Progress</div><progress class="sc-kQsIoO iCjQwl multi-progress" value="<?= empty($pool['progress']) ? '100' : $pool['progress'] ?>" max="100"></progress>
